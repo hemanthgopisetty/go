@@ -29,7 +29,7 @@ func main() { //function declaration
 	//this prints in new line 
 
 	x=int(z);
-	fmt.Println(x, y,z,a,b,c);//funciton calling
+	fmt.Println(x, y,z,a,b,c,f);//funciton calling
 }
 
 /*
