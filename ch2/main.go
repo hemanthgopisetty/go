@@ -5,22 +5,14 @@ import "fmt"
 func main() {
 
 	//Slice
-	z := make([]string, 1)
-	fmt.Println(z)
-	fmt.Println(cap(z))
-	fmt.Println(len(z))
-	z = append(z, "Hello")
-	fmt.Println(z[1])
-	fmt.Println(cap(z))
-	fmt.Println(len(z))
-	clear(z)
-	z[0]="Raju"
-	fmt.Println(z)
-	fmt.Println(cap(z))
-	fmt.Println(len(z))
+	
+	x:=[]int{1,2,3,4,5}
+	fmt.Println(copy(x[:1],x[1:]) , x)
+	
 }
 
 /*
+
  Arrays Group of same element
  Arrays start with 0
  var x[3]int ; //all elements are zero
@@ -108,7 +100,7 @@ len(x)
 	emptying the slice with clear function
 
 	it clears the slice and the lenght will remain same dudee
-    
+
 
 	z := make([]string, 1)
 	fmt.Println(z)
@@ -137,7 +129,108 @@ len(x)
 
 
 	there are many approaches to declare a slice
-	prefer to use make and append 
+	prefer to use make and append
 
+
+	Slicing a slice
+
+	slice expression create a slice from slice
+	: -> expression
+	s:e
+	if u empty the anyone of the side
+	it will presume 0 or n
+
+	when we take slice fromm slice we are not making copy of the data
+	instead ,
+	we have two variables sharing memory
+	changes to an element in a slice reflects there
+
+	x:=[]string{"a","b","c"};
+	y:=x[:2]
+	y[0]="Hemanth";
+	fmt.Println(x)
+
+	when ever we take sub slice from another
+	sb slice capacity is set to the orgianal slice capacity
+	appending to the end of the sub slice put the value in orignal slize
+
+	slices becomes more confusing when append happens
+
+	to avoid confusion we should make sure of never append subslicce
+	or make sure append doesn;t cause any overwrite
+
+	or we should use full slice expression
+	which is the third part
+	s:e:ce
+		x := make([]string, 0, 10)
+	x = append(x, "a", "b", "c", "d")
+	y := x[:2]
+	y = append(y, "e")
+	z := x[:1:1]
+	z = append(z, "f")
+	z[0]="z"
+	fmt.Println(x)
+	fmt.Println(y)
+	fmt.Println(z)
+	fmt.Println(len(x), cap(x))
+	fmt.Println(len(y), cap(y))
+	fmt.Println(len(z), cap(z))
+
+	full slice expression protects aganist append
+
+	be careful when dealiing with slices of slices as slices
+	share the same memory
+
+	avoid modifiying sub slices 
+	or use full slice expression
+
+
+	copy the slice
+	if we want to copy the slice that;s independet of the original
+
+	use built in copy 
+
+
+	copy the slice 
 	
+	copy(destination,source) -> returns how many elements copied
+
+	x:=[]int{1,2,3,4,5}
+	y:=make([]int,2)
+	fmt.Println(copy(y,x),x,y)
+
+	the above copies 2 elements since tha length is 2 
+
+	x:=[]int{1,2,3,4,5}
+	y:=make([]int,10)
+	fmt.Println(copy(y,x[4:]),x,y)
+
+	we could also copy the sub slice
+
+	we can also copy within the same slice
+	copy(x[:],x[1:])
+
+	we can also copy the array and slice vice versa
+
+	we can also slice from array 
+	it also has same memory properites as slice
+	to convert the slice to array
+	you need to use the type conversion 
+	x:=[]int{1,2,3,45}
+	y=[4]int(x)
+	[....] this give compile time error dudee
+
+	the above is known as slice to array using type 
+	but for array to slice u can just use : operator
+
+	you can't pass arrays as function parameter 
+
+
+	string indexes are not group runes(characters)
+	string are zero index
+	you can also slice the string too
+	strings are immutable u don;t have any issue like in arrays 
+	string can converted to runes and vice versa
+	
+
 */
