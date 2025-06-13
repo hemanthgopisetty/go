@@ -1,14 +1,7 @@
 package main
 
-import "fmt"
-
 func main() {
-
-	//Slice
-	
-	x:=[]int{1,2,3,4,5}
-	fmt.Println(copy(x[:1],x[1:]) , x)
-	
+	practicemap()
 }
 
 /*
@@ -181,25 +174,25 @@ len(x)
 	be careful when dealiing with slices of slices as slices
 	share the same memory
 
-	avoid modifiying sub slices 
+	avoid modifiying sub slices
 	or use full slice expression
 
 
 	copy the slice
 	if we want to copy the slice that;s independet of the original
 
-	use built in copy 
+	use built in copy
 
 
-	copy the slice 
-	
+	copy the slice
+
 	copy(destination,source) -> returns how many elements copied
 
 	x:=[]int{1,2,3,4,5}
 	y:=make([]int,2)
 	fmt.Println(copy(y,x),x,y)
 
-	the above copies 2 elements since tha length is 2 
+	the above copies 2 elements since tha length is 2
 
 	x:=[]int{1,2,3,4,5}
 	y:=make([]int,10)
@@ -212,25 +205,25 @@ len(x)
 
 	we can also copy the array and slice vice versa
 
-	we can also slice from array 
+	we can also slice from array
 	it also has same memory properites as slice
 	to convert the slice to array
-	you need to use the type conversion 
+	you need to use the type conversion
 	x:=[]int{1,2,3,45}
 	y=[4]int(x)
 	[....] this give compile time error dudee
 
-	the above is known as slice to array using type 
+	the above is known as slice to array using type
 	but for array to slice u can just use : operator
 
-	you can't pass arrays as function parameter 
+	you can't pass arrays as function parameter
 
 
 	string indexes are not group runes(characters)
 	string are zero index
 	you can also slice the string too
-	strings are immutable u don;t have any issue like in arrays 
+	strings are immutable u don;t have any issue like in arrays
 	string can converted to runes and vice versa
-	
+
 
 */
