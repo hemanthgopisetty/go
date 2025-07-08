@@ -40,7 +40,11 @@ func main(){
 	// fmt.Println(returnMultiple())
 	// fmt.Println(returnMultipleByNames())
 
-	function()
+	// function()
+	// closures()
+
+	// deferr();
+	callbyvalue()
 }
 /*
 every go program starts from main function
