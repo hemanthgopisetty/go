@@ -1,0 +1,31 @@
+-> Reducing the garbage collector workload
+
+-> Using buffer's we can reduce the garbage collector workload
+
+-> Garbage means the data where there are no pointers pointing to it
+-> the memory allocated to that data can be reused,as this data not been used by anyone else
+
+-> garbage collector collects these unused memory and makes reuse, 
+-> if not the program will start consuming as much memory as it's
+
+-> A stack is consecutive blocks of memory
+-> every function call in a thread of execution shares the same stack
+-> allocating memory on the stack is fast and simple
+-> stack pointer tracks the last location where memory was allocated
+
+-> to allocate addition memory is done by changing the value of the stack pointer
+-> when a new function is invoked 
+-> a new stack frame is created for the function's data
+-> local variables and parameters are stored on the stack
+
+
+-> each new variable moves the stack pointer by it's size of the memory
+-> when a functions finishing ,it return's values are copied back to the calling function via stack
+-> and the stack pointer is moved back to the begginig of the stack frame
+-> deallocating all the memory that was used by this exiting function and thus stack pointer value becomes 
+-> the same when called function size 
+
+-> Heap is the memory that is managed by the garbage collector
+-> Garbage collector used by runtime favours low latency 
+
+
